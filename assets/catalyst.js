@@ -4,7 +4,10 @@
 
   // Reveal sections (and draw their chalk) as they scroll into view.
   const els = document.querySelectorAll('.reveal');
-  if (reduce || !('IntersectionObserver' in window)) els.forEach((el) => el.classList.add('in'));
+  const showAll = () => els.forEach((el) => el.classList.add('in'));
+  addEventListener('beforeprint', showAll);
+  // Background tabs, prerenders and link previews never fire the observer: show everything there, no animation.
+  if (reduce || document.hidden || !('IntersectionObserver' in window)) showAll();
   else {
     const io = new IntersectionObserver((entries) => {
       for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
