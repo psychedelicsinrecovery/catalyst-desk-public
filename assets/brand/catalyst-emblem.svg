@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="ce-t ce-d">
+  <title id="ce-t">C.A.T.A.L.Y.S.T. emblem</title>
+  <desc id="ce-d">A diamond eye on a beam of light, circled by a ring of eight nodes, rooted in mycelium, with three seeds: the vine (Alfred), the cacao (Littlebird) and the cactus (Cosmos).</desc>
+  <defs>
+    <linearGradient id="ce-ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b48cff"/><stop offset=".5" stop-color="#6fe3ff"/><stop offset="1" stop-color="#f3c76b"/>
+    </linearGradient>
+    <linearGradient id="ce-beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3c76b" stop-opacity="0"/><stop offset=".18" stop-color="#fff1c2"/>
+      <stop offset=".82" stop-color="#f3c76b"/><stop offset="1" stop-color="#f3c76b" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ce-core" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fffbe9"/><stop offset=".35" stop-color="#f3c76b"/><stop offset="1" stop-color="#b48cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ce-halo" cx=".5" cy=".48" r=".5">
+      <stop offset="0" stop-color="#6fe3ff" stop-opacity=".22"/><stop offset=".55" stop-color="#b48cff" stop-opacity=".08"/><stop offset="1" stop-color="#b48cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ce-tail" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff1c2"/><stop offset="1" stop-color="#6fe3ff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ce-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ce-soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9"/></filter>
+  </defs>
+  <style>
+    .ce-beam{animation:ce-pulse 4.8s ease-in-out infinite}
+    .ce-eye{transform-origin:256px 246px;animation:ce-blink 9s ease-in-out infinite}
+    .ce-breathe{transform-origin:0 0;animation:ce-breathe 6s ease-in-out infinite}
+    .ce-b2{animation-delay:-2s}.ce-b3{animation-delay:-4s}
+    .ce-spark{transform-origin:256px 30px;animation:ce-twinkle 3.6s ease-in-out infinite}
+    @keyframes ce-pulse{0%,100%{opacity:.82}50%{opacity:1}}
+    @keyframes ce-blink{0%,93%,100%{transform:scaleY(1)}95.5%{transform:scaleY(.08)}}
+    @keyframes ce-breathe{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.07);opacity:1}}
+    @keyframes ce-twinkle{0%,100%{transform:scale(.8);opacity:.75}50%{transform:scale(1.12);opacity:1}}
+    @media (prefers-reduced-motion:reduce){.ce-beam,.ce-eye,.ce-breathe,.ce-spark{animation:none}}
+  </style>
+
+  <!-- halo -->
+  <circle cx="256" cy="256" r="240" fill="url(#ce-halo)"/>
+
+  <!-- ring of eight (the guardian mandala) -->
+  <g fill="none" stroke="url(#ce-ring)" filter="url(#ce-glow)">
+    <circle cx="256" cy="256" r="226" stroke-width="3"/>
+    <circle cx="256" cy="256" r="212" stroke-width="1" stroke-opacity=".45" stroke-dasharray="1.5 7"/>
+  </g>
+
+  <!-- constellation threads: ring nodes to the diamond -->
+  <g stroke="#b48cff" stroke-opacity=".38" stroke-width="1" fill="none" stroke-dasharray="3 5">
+    <path d="M96.2 96.2 L194 193"/><path d="M415.8 96.2 L318 193"/>
+    <path d="M30 256 L132 246"/><path d="M482 256 L380 246"/>
+    <path d="M96.2 415.8 L194 299"/><path d="M415.8 415.8 L318 299"/>
+  </g>
+  <g fill="#0c0a1d" stroke-width="2.5" filter="url(#ce-glow)">
+    <circle cx="96.2" cy="96.2" r="7" stroke="#b48cff"/><circle cx="415.8" cy="96.2" r="7" stroke="#6fe3ff"/>
+    <circle cx="30" cy="256" r="7" stroke="#5ee6c4"/><circle cx="482" cy="256" r="7" stroke="#f3c76b"/>
+    <circle cx="96.2" cy="415.8" r="7" stroke="#ff8fb1"/><circle cx="415.8" cy="415.8" r="7" stroke="#b48cff"/>
+    <circle cx="256" cy="482" r="7" stroke="#6fe3ff"/>
+  </g>
+
+  <!-- mycelium roots (S.P.O.R.E. → R.H.I.Z.O. → M.Y.C.O.) -->
+  <g fill="none" stroke="#5ee6c4" stroke-linecap="round" filter="url(#ce-glow)">
+    <path d="M256 432 C236 446 206 454 178.7 468.4" stroke-width="2.2"/>
+    <path d="M256 432 C276 446 306 454 333.3 468.4" stroke-width="2.2"/>
+    <path d="M256 432 C226 436 162 428 126.4 441.1" stroke-width="1.6" stroke-opacity=".8"/>
+    <path d="M256 432 C286 436 350 428 385.6 441.1" stroke-width="1.6" stroke-opacity=".8"/>
+    <path d="M212 452 C204 462 196 468 190 478" stroke-width="1.1" stroke-opacity=".6"/>
+    <path d="M300 452 C308 462 316 468 322 478" stroke-width="1.1" stroke-opacity=".6"/>
+  </g>
+  <g fill="#5ee6c4"><circle cx="178.7" cy="468.4" r="3"/><circle cx="333.3" cy="468.4" r="3"/><circle cx="126.4" cy="441.1" r="2.5"/><circle cx="385.6" cy="441.1" r="2.5"/></g>
+
+  <!-- the beam of light -->
+  <g class="ce-beam">
+    <rect x="248" y="18" width="16" height="476" rx="8" fill="#f3c76b" opacity=".22" filter="url(#ce-soft)"/>
+    <rect x="254" y="18" width="4" height="476" rx="2" fill="url(#ce-beam)"/>
+  </g>
+
+  <!-- the catalyst spark -->
+  <g class="ce-spark" filter="url(#ce-glow)">
+    <path d="M256 6 L261 25 L280 30 L261 35 L256 54 L251 35 L232 30 L251 25 Z" fill="#fff1c2"/>
+  </g>
+
+  <!-- comet -->
+  <g filter="url(#ce-glow)">
+    <path d="M444 62 C420 84 392 104 362 118" stroke="url(#ce-tail)" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="446" cy="60" r="5" fill="#fff1c2"/>
+  </g>
+
+  <!-- the diamond -->
+  <g fill="none" stroke-linejoin="round" filter="url(#ce-glow)">
+    <path d="M256 140 L380 246 L256 352 L132 246 Z" stroke="#f3c76b" stroke-width="3.2" fill="#0c0a1d" fill-opacity=".72"/>
+    <path d="M256 162 L354 246 L256 330 L158 246 Z" stroke="#6fe3ff" stroke-width="2" stroke-opacity=".9"/>
+    <path d="M256 118 L406 246 L256 374 L106 246 Z" stroke="#b48cff" stroke-width="1" stroke-opacity=".45"/>
+  </g>
+
+  <!-- the eye -->
+  <g class="ce-eye" filter="url(#ce-glow)">
+    <path d="M176 246 Q256 184 336 246 Q256 308 176 246 Z" fill="#06050e" stroke="#f1edfb" stroke-width="3"/>
+    <circle cx="256" cy="246" r="30" fill="none" stroke="#b48cff" stroke-width="3"/>
+    <circle cx="256" cy="246" r="21" fill="url(#ce-core)"/>
+    <circle cx="256" cy="246" r="8" fill="#06050e"/>
+    <circle cx="262" cy="239" r="3.2" fill="#fffbe9"/>
+  </g>
+
+  <!-- the three seeds of the fleet -->
+  <g>
+    <!-- 🌿 Vine: Alfred -->
+    <g transform="translate(126.1 181)" filter="url(#ce-glow)">
+      <g class="ce-breathe ce-b1">
+      <circle r="27" fill="#0c0a1d" stroke="#5ee6a0" stroke-width="2.6"/>
+      <path d="M-11 11 C-17 -1 -5 -15 6 -9 C14 -5 11 7 2 6 C-4 5.5 -4 -2 1.5 -1.5" fill="none" stroke="#5ee6a0" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M5 -10 C10 -19 19 -18 19 -9 C13 -7 8 -7 5 -10 Z" fill="#5ee6a0"/>
+      <path d="M-11 11 C-14 15 -16 16 -19 17" fill="none" stroke="#5ee6a0" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </g>
+    <!-- ☕ Cacao: Littlebird -->
+    <g transform="translate(385.9 181)" filter="url(#ce-glow)">
+      <g class="ce-breathe ce-b2">
+      <circle r="27" fill="#0c0a1d" stroke="#f3a35b" stroke-width="2.6"/>
+      <g transform="rotate(24)">
+        <ellipse rx="10" ry="16" fill="none" stroke="#f3a35b" stroke-width="2.4"/>
+        <path d="M0 -15 V15 M-5.5 -13 C-7.5 -4 -7.5 4 -5.5 13 M5.5 -13 C7.5 -4 7.5 4 5.5 13" fill="none" stroke="#f3a35b" stroke-width="1.4" stroke-opacity=".85"/>
+        <path d="M0 -16 C1 -20 3 -22 6 -23" fill="none" stroke="#5ee6a0" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      </g>
+    </g>
+    <!-- 🌵 Cactus: Cosmos -->
+    <g transform="translate(256 406)" filter="url(#ce-glow)">
+      <g class="ce-breathe ce-b3">
+      <circle r="27" fill="#0c0a1d" stroke="#5ee6c4" stroke-width="2.6"/>
+      <path d="M-3.5 15 V-10 a4.5 4.5 0 0 1 9 0 V15 M5.5 2 h4.5 a3.2 3.2 0 0 0 3.2 -3.2 V-6 a3.1 3.1 0 0 0 -6.2 0 M-3.5 5 h-4 a3.2 3.2 0 0 1 -3.2 -3.2 V-2 a3.1 3.1 0 0 1 6.2 0" fill="none" stroke="#5ee6c4" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M1 -9 V12" stroke="#5ee6c4" stroke-width="1" stroke-opacity=".7"/>
+      <circle cx="1" cy="-15.5" r="3" fill="#ff8fb1"/>
+      <path d="M-12 16 H14" stroke="#5ee6c4" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".7"/>
+      </g>
+    </g>
+  </g>
+</svg>
