@@ -48,14 +48,22 @@ section{padding:clamp(56px,9vw,104px) 0;position:relative}
 /* nav */
 .nav{position:sticky;top:0;z-index:40;height:var(--nav);display:flex;align-items:center;
   background:linear-gradient(rgba(13,20,17,.92),rgba(13,20,17,.78));backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;gap:1rem;width:100%}
-.brand{display:flex;align-items:center;gap:.6rem;color:var(--chalk);text-decoration:none;font-family:var(--hand);font-size:1.25rem;white-space:nowrap}
-.brand img{width:34px;height:34px}
-.nav ul{display:flex;gap:.2rem;list-style:none;margin:0 0 0 auto;padding:0}
-.nav ul a{color:var(--chalk2);text-decoration:none;font-size:.92rem;padding:.4rem .7rem;border-radius:10px}
-.nav ul a:hover{color:var(--chalk);background:rgba(238,240,232,.06)}
-.nav .btn{margin-left:.4rem}
-@media (max-width:880px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+/* One row at every width (arrival kit 1.2): the brand may shrink, the kit's <arrival-nav> takes the
+   room that's left and folds what doesn't fit into "More", then into a Menu below 1100px; the call to
+   serve never shrinks. */
+.nav .wrap{display:flex;flex-wrap:nowrap;align-items:center;gap:1rem;width:100%;min-width:0}
+.brand{display:flex;flex:0 1 auto;min-width:0;align-items:center;gap:.6rem;color:var(--chalk);text-decoration:none;font-family:var(--hand);font-size:1.25rem;white-space:nowrap}
+.brand img{width:34px;height:34px;flex:none}
+.nav arrival-nav{margin-left:.4rem}
+.nav .btn{flex:none;margin-left:.4rem}
+.nav .arr-nav-a{border-radius:10px}
+@media (max-width:420px){.nav .wrap{gap:.5rem}.nav .brand .arr-brand-text{display:none}}
+
+/* PIR's arrival kit (navbar, Menu, footer groups, windows) in chalk on slate, whatever light the
+   visitor chose elsewhere on PIR's pages: the chalkboard has one look. (0,2,0) outranks org.css. */
+:root[data-theme]{--background:#0d1411;--foreground:#eef0e8;--heading:#eef0e8;--muted:#c9cec1;--surface:#141f1a;--surface-muted:#1c2a23;
+  --border:rgba(238,240,232,.24);--accent:#5ee6c4;--accent-strong:#8ff0d6;--on-accent:#0d1411;--arr-backdrop:rgba(5,9,7,.7);--ink:#0d1411;
+  --panel:rgba(20,31,26,.86);--panel-solid:#141f1a;--fg:#eef0e8;color-scheme:dark}
 
 /* buttons: the not-so-subtle CTAs */
 .btn{--c:var(--gold);display:inline-flex;align-items:center;gap:.55rem;padding:.78rem 1.2rem;border-radius:999px;font:700 .98rem/1 var(--sans);
@@ -203,8 +211,11 @@ dialog.lightbox button{position:absolute;top:8px;right:8px;width:40px;height:40p
 /* watermark + footer */
 .watermark{position:absolute;pointer-events:none;opacity:.035;filter:invert(1);z-index:-1}
 footer{border-top:1px solid var(--line);padding:42px 0 54px;color:var(--faint);font-size:.92rem;position:relative;overflow:hidden}
-footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
-@media (max-width:760px){footer .cols{grid-template-columns:1fr}}
+/* Kit 1.4: the chalkboard's blurb on a row of its own, then the kit's footer groups across the full
+   width in balanced columns, the same shape as every PIR page (no hand patches on the kit's links:
+   its footer styles are scoped now). */
+footer .cols{display:grid;grid-template-columns:1fr;gap:22px}
+footer .cols > div:first-child{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem 1rem;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.12)}
 footer b{color:var(--chalk);display:block;margin-bottom:.5rem;font-family:var(--hand);font-size:1.15rem;font-weight:700}
 footer a{color:var(--chalk2);text-decoration:none;display:block;padding:.15rem 0}
 footer a:hover{color:var(--gold)}
